@@ -15,7 +15,7 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
      */
     public HealthcareProviderDashboardPanel() {
         initComponents();
-        setSize(1150,720);
+        
     }
 
     /**
@@ -38,8 +38,8 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
         prescriptionsCountLabel = new javax.swing.JLabel();
         prescriptionsTextLabel = new javax.swing.JLabel();
         verifiedCard = new javax.swing.JPanel();
-        verifiedCountLabel = new javax.swing.JLabel();
         verifiedTextLabel = new javax.swing.JLabel();
+        verifiedCountLabel = new javax.swing.JLabel();
         pendingCard = new javax.swing.JPanel();
         pendingCountLabel = new javax.swing.JLabel();
         pendingTextLabel = new javax.swing.JLabel();
@@ -51,24 +51,23 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
         appointmentsSectionLabel = new javax.swing.JLabel();
         refreshButton = new javax.swing.JButton();
         appointmentsScrollPane = new javax.swing.JScrollPane();
-        appointmentsTable = new javax.swing.JTable();
+        jTable2 = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(1150, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         titleLabel.setText("HEALTHCARE PROVIDER DASHBOARD");
-        add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 700, 35));
+        add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 28));
 
-        descriptionLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         descriptionLabel.setText("Manage patient care and prescriptions");
-        add(descriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 700, 20));
+        add(descriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 500, 16));
 
         welcomeLabel.setText("Welcome, Dr. [Name]");
-        add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 95, 700, 20));
+        add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 500, 16));
 
         logoutButton.setText("Logout");
-        add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 30, 100, 36));
+        add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 90, 30));
 
         patientsCard.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         patientsCard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,14 +75,14 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
         patientsCountLabel.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         patientsCountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         patientsCountLabel.setText("15");
-        patientsCard.add(patientsCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 210, 40));
+        patientsCard.add(patientsCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 145, 32));
 
         patientsTextLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         patientsTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         patientsTextLabel.setText("Patients Today");
-        patientsCard.add(patientsTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 40));
+        patientsCard.add(patientsTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 15, 145, 32));
 
-        add(patientsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 250, 120));
+        add(patientsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 175, 95));
 
         prescriptionsCard.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         prescriptionsCard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,29 +90,29 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
         prescriptionsCountLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         prescriptionsCountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         prescriptionsCountLabel.setText("8");
-        prescriptionsCard.add(prescriptionsCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 210, 40));
+        prescriptionsCard.add(prescriptionsCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 50, 145, 32));
 
         prescriptionsTextLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         prescriptionsTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         prescriptionsTextLabel.setText("Prescriptions Pending");
-        prescriptionsCard.add(prescriptionsTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 40));
+        prescriptionsCard.add(prescriptionsTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 15, 145, 32));
 
-        add(prescriptionsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 250, 120));
+        add(prescriptionsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 175, 95));
 
         verifiedCard.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         verifiedCard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        verifiedCountLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        verifiedCountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        verifiedCountLabel.setText("12");
-        verifiedCard.add(verifiedCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 210, 40));
-
         verifiedTextLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         verifiedTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         verifiedTextLabel.setText("Verified Insurance");
-        verifiedCard.add(verifiedTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 40));
+        verifiedCard.add(verifiedTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 15, 145, 32));
 
-        add(verifiedCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 250, 120));
+        verifiedCountLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        verifiedCountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        verifiedCountLabel.setText("12");
+        verifiedCard.add(verifiedCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 145, 32));
+
+        add(verifiedCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 175, 95));
 
         pendingCard.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         pendingCard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,45 +120,64 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
         pendingCountLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         pendingCountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pendingCountLabel.setText("5");
-        pendingCard.add(pendingCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 210, 40));
+        pendingCard.add(pendingCountLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 145, 32));
 
         pendingTextLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         pendingTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pendingTextLabel.setText("Pending Claims");
-        pendingCard.add(pendingTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 40));
+        pendingCard.add(pendingTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 15, 145, 32));
 
-        add(pendingCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 140, 250, 120));
+        add(pendingCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, 175, 95));
 
         quickActionsLabel.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         quickActionsLabel.setText("QUICK ACTIONS");
-        add(quickActionsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 285, 300, 25));
+        add(quickActionsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 250, 20));
 
         checkInPatientButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         checkInPatientButton.setText("Check In Patient");
-        add(checkInPatientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 180, 36));
+        checkInPatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkInPatientButtonActionPerformed(evt);
+            }
+        });
+        add(checkInPatientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 170, 36));
 
         createPrescriptionButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         createPrescriptionButton.setText("Create Prescription");
-        add(createPrescriptionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 180, 36));
+        createPrescriptionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createPrescriptionButtonActionPerformed(evt);
+            }
+        });
+        add(createPrescriptionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 170, 36));
 
         verifyInsuranceButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         verifyInsuranceButton.setText("Verify Insurance");
-        add(verifyInsuranceButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 180, 36));
+        verifyInsuranceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verifyInsuranceButtonActionPerformed(evt);
+            }
+        });
+        add(verifyInsuranceButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 170, 36));
 
         viewRecordsButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         viewRecordsButton.setText("View Records");
-        add(viewRecordsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 180, 36));
+        add(viewRecordsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 230, 170, 36));
 
         appointmentsSectionLabel.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         appointmentsSectionLabel.setText("TODAY'S APPOINTMENTS");
-        add(appointmentsSectionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 400, 25));
+        add(appointmentsSectionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 300, 20));
 
         refreshButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         refreshButton.setText("Refresh");
-        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 380, 100, 30));
+        refreshButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshButtonActionPerformed(evt);
+            }
+        });
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, 90, 26));
 
-        appointmentsTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        appointmentsTable.setModel(new javax.swing.table.DefaultTableModel(
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -170,20 +188,35 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        appointmentsTable.setRowHeight(35);
-        appointmentsScrollPane.setViewportView(appointmentsTable);
+        appointmentsScrollPane.setViewportView(jTable2);
 
-        add(appointmentsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 1070, 280));
+        add(appointmentsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 745, 240));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void createPrescriptionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPrescriptionButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createPrescriptionButtonActionPerformed
+
+    private void checkInPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInPatientButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkInPatientButtonActionPerformed
+
+    private void verifyInsuranceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyInsuranceButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verifyInsuranceButtonActionPerformed
+
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_refreshButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane appointmentsScrollPane;
     private javax.swing.JLabel appointmentsSectionLabel;
-    private javax.swing.JTable appointmentsTable;
     private javax.swing.JButton checkInPatientButton;
     private javax.swing.JButton createPrescriptionButton;
     private javax.swing.JLabel descriptionLabel;
+    private javax.swing.JTable jTable2;
     private javax.swing.JButton logoutButton;
     private javax.swing.JPanel patientsCard;
     private javax.swing.JLabel patientsCountLabel;

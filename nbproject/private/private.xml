@@ -3,39 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/business/OrganizationDirectory.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/User.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Claim.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/ClaimsProcessorDashboard.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/PatientDashboardPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/LoginPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/MyPoliciesPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/SubmitClaimPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/RegisterUserPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Employee.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/ManageEnterprisesPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/business/PolicyDirectory.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Address.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/business/PrescriptionDirectory.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/business/EnterpriseDirectory.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/SystemAdminDashboardPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/ManageOrganizationsPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Person.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Policy.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/MyClaimsPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/business/ClaimDirectory.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Patient.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Prescription.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/ManageEmployeesPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/MyPrescriptionsPanel.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Enterprise.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/utils/FileHandler.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Role.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/business/SystemData.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/business/UserDirectory.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Organization.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/model/Medication.java</file>
-            <file>file:/C:/Users/Sandeep%20Patil/Desktop/Patil_Nishant_002566128_assignments/HealthGuard360/src/ui/MainApplicationFrame.java</file>
+            <file>file:/D:/Final%20Project/Health-Guard-360/src/ui/MyPrescriptionsPanel.java</file>
+            <file>file:/D:/Final%20Project/Health-Guard-360/src/ui/LoginPanel.java</file>
+            <file>file:/D:/Final%20Project/Health-Guard-360/src/ui/HealthcareProviderDashboardPanel.java</file>
+            <file>file:/D:/Final%20Project/Health-Guard-360/src/business/SystemData.java</file>
+            <file>file:/D:/Final%20Project/Health-Guard-360/src/ui/MainApplicationFrame.java</file>
         </group>
     </open-files>
 </project-private>

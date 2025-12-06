@@ -179,15 +179,23 @@ public class HealthcareProviderDashboardPanel extends javax.swing.JPanel {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Time", "Patient Name", "Reason", "Insurance", "Action"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         appointmentsScrollPane.setViewportView(jTable2);
 
         add(appointmentsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 745, 240));

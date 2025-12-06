@@ -99,7 +99,7 @@ public class LoginPanel extends javax.swing.JPanel {
         // Get entered credentials
         String username = usernameTextField.getText().trim();
         String password = new String(passwordField.getPassword());
-        
+
         // Validate input
         if (username.isEmpty() || password.isEmpty()) {
             javax.swing.JOptionPane.showMessageDialog(this,
@@ -108,83 +108,78 @@ public class LoginPanel extends javax.swing.JPanel {
                 javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
         // Get SystemData instance
         business.SystemData systemData = business.SystemData.getInstance();
-        
+
         // Authenticate using UserDirectory
         model.User authenticatedUser = systemData.getUserDirectory().authenticate(username, password);
-        
+
         if (authenticatedUser != null) {
             // Set current user in SystemData
             systemData.setCurrentUser(authenticatedUser);
-            
+
             // Get reference to MainApplicationFrame
             java.awt.Container parent = this.getParent();
             while (parent != null && !(parent instanceof MainApplicationFrame)) {
                 parent = parent.getParent();
             }
-            
+
             if (parent instanceof MainApplicationFrame) {
                 MainApplicationFrame mainFrame = (MainApplicationFrame) parent;
-                
+
                 // Navigate based on role
                 if (authenticatedUser.getRole().isAdminRole()) {
                     // System Admin or other admin roles
                     SystemAdminDashboardPanel adminDashboard = new SystemAdminDashboardPanel();
                     mainFrame.addPanel(adminDashboard, "systemAdminDashboard");
                     mainFrame.showPanel("systemAdminDashboard");
-                    
+
                 } else if (authenticatedUser.getRole().isPatient()) {
-                // Patient role
+                    // Patient role
+                    // Initialize sample data for this patient
+                    String patientId = authenticatedUser.getPerson().getPersonId();
+                    systemData.initializeSampleDataForPatient(patientId);
 
-                // Initialize sample data for this patient (IMPORTANT!)
-                String patientId = authenticatedUser.getPerson().getPersonId();
-                systemData.initializeSampleDataForPatient(patientId);
+                    PatientDashboardPanel patientDashboard = new PatientDashboardPanel();
+                    mainFrame.addPanel(patientDashboard, "patientDashboard");
+                    mainFrame.showPanel("patientDashboard");
 
-                PatientDashboardPanel patientDashboard = new PatientDashboardPanel();
-                mainFrame.addPanel(patientDashboard, "patientDashboard");
-                mainFrame.showPanel("patientDashboard");
-                    
                 } else if (authenticatedUser.getRole() == model.Role.CLAIMS_PROCESSOR) {
                     // Claims Processor role
                     ClaimsProcessorDashboard claimsDashboard = new ClaimsProcessorDashboard();
                     mainFrame.addPanel(claimsDashboard, "claimsProcessorDashboard");
                     mainFrame.showPanel("claimsProcessorDashboard");
-                    
-                } else if (authenticatedUser.getRole() == model.Role.CLAIMS_PROCESSOR) {
-                    // Claims Processor role
-                    ClaimsProcessorDashboard claimsDashboard = new ClaimsProcessorDashboard();
-                    mainFrame.addPanel(claimsDashboard, "claimsProcessorDashboard");
-                    mainFrame.showPanel("claimsProcessorDashboard");
-                    
-                } else if (authenticatedUser.getRole() == model.Role.CLAIMS_PROCESSOR) {
-                    // Claims Processor role
-                    ClaimsProcessorDashboard claimsDashboard = new ClaimsProcessorDashboard();
-                    mainFrame.addPanel(claimsDashboard, "claimsProcessorDashboard");
-                    mainFrame.showPanel("claimsProcessorDashboard");
-                    
+
+                } else if (authenticatedUser.getRole() == model.Role.DOCTOR || 
+                           authenticatedUser.getRole() == model.Role.NURSE) {
+                    // Healthcare Provider role
+                    HealthcareProviderDashboardPanel providerDashboard = new HealthcareProviderDashboardPanel();
+                    mainFrame.addPanel(providerDashboard, "healthcareProviderDashboard");
+                    mainFrame.showPanel("healthcareProviderDashboard");
+
                 } else {
-                    // Other roles (Doctor, Pharmacist, etc.)
+                    // Other roles (Pharmacist, Supplier, etc.)
                     javax.swing.JOptionPane.showMessageDialog(this,
                         "Dashboard for role '" + authenticatedUser.getRole().getDisplayName() + "' is under development.",
                         "Coming Soon",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
-                
+
                 // Clear fields after successful login
                 usernameTextField.setText("");
                 passwordField.setText("");
             }
-            
+
         } else {
             // Authentication failed
             javax.swing.JOptionPane.showMessageDialog(this,
                 "Invalid username or password!\n\n" +
                 "Test Credentials:\n" +
                 "System Admin - Username: admin, Password: admin123\n" +
-                "Patient - Username: patient, Password: patient123",
+                "Patient - Username: patient, Password: patient123\n" +
+                "Doctor - Username: doctor, Password: doctor123",
                 "Login Failed",
                 javax.swing.JOptionPane.ERROR_MESSAGE);
         }

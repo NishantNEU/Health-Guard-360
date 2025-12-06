@@ -32,6 +32,8 @@ public class MainApplicationFrame extends javax.swing.JFrame {
                 saveDataOnExit();
             }
         });
+        
+        setSize(1150,720);
     }
     
     /**

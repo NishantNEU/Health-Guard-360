@@ -1,0 +1,48 @@
+====================================
+    MEDICAL CLAIM DOCUMENT
+====================================
+
+Patient Name: John Doe
+
+Service Date: 11/20/2024
+
+Provider Name: City General Hospital
+
+Diagnosis: Upper respiratory infection with fever
+
+Service Type: Doctor Visit
+
+Claim Amount: $285.50
+
+Policy Number: POL-2024-00123
+
+====================================
+ADDITIONAL INFORMATION
+====================================
+
+Doctor: Dr. Sarah Mitchell, MD
+Department: Internal Medicine
+Consultation Time: 45 minutes
+
+Services Rendered:
+- Physical examination
+- Diagnostic tests (throat culture)
+- Prescription medication
+
+====================================
+
+Instructions for use:
+1. Save this file as a .txt file
+2. In HealthGuard360, go to "Submit Claim"
+3. Click "Upload Documents"
+4. Select this .txt file
+5. Watch the form auto-fill!
+
+The system will automatically extract:
+✓ Service Date: 11/20/2024
+✓ Provider Name: City General Hospital  
+✓ Diagnosis: Upper respiratory infection with fever
+✓ Service Type: Doctor Visit
+✓ Claim Amount: 285.50
+
+You can then review and edit before submitting!

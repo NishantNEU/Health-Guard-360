@@ -1,0 +1,35 @@
+====================================
+    EMERGENCY ROOM CLAIM
+====================================
+
+Patient Name: Jane Smith
+
+Service Date: 12/01/2024
+
+Provider Name: Memorial Emergency Center
+
+Diagnosis: Sprained ankle from fall
+
+Service Type: Emergency Room Visit
+
+Claim Amount: $1250.00
+
+Policy Number: POL-2024-00456
+
+====================================
+VISIT DETAILS
+====================================
+
+Chief Complaint: Ankle injury
+Arrival Time: 14:30
+Discharge Time: 17:15
+
+Treatment Provided:
+- X-ray imaging
+- Pain management
+- Ankle wrap and crutches
+- Prescription for pain medication
+
+Attending Physician: Dr. Michael Chen, MD
+
+====================================

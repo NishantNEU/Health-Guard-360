@@ -11,9 +11,9 @@ import java.util.List;
  * Represents an insurance policy with all details and calculations
  */
 public class Policy implements Serializable {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     // Policy Types
     public enum PolicyType {
         INDIVIDUAL_HMO("Individual HMO"),
@@ -23,23 +23,23 @@ public class Policy implements Serializable {
         GROUP("Group"),
         MEDICARE("Medicare"),
         MEDICAID("Medicaid");
-        
+
         private final String displayName;
-        
+
         PolicyType(String displayName) {
             this.displayName = displayName;
         }
-        
+
         public String getDisplayName() {
             return displayName;
         }
-        
+
         @Override
         public String toString() {
             return displayName;
         }
     }
-    
+
     // Policy Status
     public enum PolicyStatus {
         ACTIVE("Active"),
@@ -47,23 +47,23 @@ public class Policy implements Serializable {
         CANCELLED("Cancelled"),
         SUSPENDED("Suspended"),
         PENDING("Pending");
-        
+
         private final String displayName;
-        
+
         PolicyStatus(String displayName) {
             this.displayName = displayName;
         }
-        
+
         public String getDisplayName() {
             return displayName;
         }
-        
+
         @Override
         public String toString() {
             return displayName;
         }
     }
-    
+
     // Properties
     private String policyNumber;
     private String patientId; // ID of the policyholder
@@ -79,13 +79,13 @@ public class Policy implements Serializable {
     private List<String> beneficiaries; // Names of beneficiaries
     private List<String> claimIds; // List of claim IDs for this policy
     private LocalDate createdDate;
-    
+
     /**
      * Complete constructor
      */
-    public Policy(String patientId, PolicyType policyType, double coverageAmount, 
-                  double deductible, double copayment, String insuranceProviderId,
-                  LocalDate startDate, int durationYears) {
+    public Policy(String patientId, PolicyType policyType, double coverageAmount,
+            double deductible, double copayment, String insuranceProviderId,
+            LocalDate startDate, int durationYears) {
         this.policyNumber = generatePolicyNumber();
         this.patientId = patientId;
         this.policyType = policyType;
@@ -101,7 +101,7 @@ public class Policy implements Serializable {
         this.claimIds = new ArrayList<>();
         this.createdDate = LocalDate.now();
     }
-    
+
     /**
      * Simple constructor
      */
@@ -121,7 +121,7 @@ public class Policy implements Serializable {
         this.claimIds = new ArrayList<>();
         this.createdDate = LocalDate.now();
     }
-    
+
     /**
      * Default constructor
      */
@@ -141,122 +141,122 @@ public class Policy implements Serializable {
         this.claimIds = new ArrayList<>();
         this.createdDate = LocalDate.now();
     }
-    
+
     /**
      * Generate unique policy number
      */
     private String generatePolicyNumber() {
         int year = LocalDate.now().getYear();
-        int random = (int)(Math.random() * 100000);
+        int random = (int) (Math.random() * 100000);
         return String.format("POL-%d-%05d", year, random);
     }
-    
+
     // Getters
     public String getPolicyNumber() {
         return policyNumber;
     }
-    
+
     public String getPatientId() {
         return patientId;
     }
-    
+
     public PolicyType getPolicyType() {
         return policyType;
     }
-    
+
     public PolicyStatus getPolicyStatus() {
         return policyStatus;
     }
-    
+
     public double getCoverageAmount() {
         return coverageAmount;
     }
-    
+
     public double getDeductible() {
         return deductible;
     }
-    
+
     public double getCopayment() {
         return copayment;
     }
-    
+
     public double getMonthlyPremium() {
         return monthlyPremium;
     }
-    
+
     public LocalDate getStartDate() {
         return startDate;
     }
-    
+
     public LocalDate getExpiryDate() {
         return expiryDate;
     }
-    
+
     public String getInsuranceProviderId() {
         return insuranceProviderId;
     }
-    
+
     public List<String> getBeneficiaries() {
         return new ArrayList<>(beneficiaries);
     }
-    
+
     public List<String> getClaimIds() {
         return new ArrayList<>(claimIds);
     }
-    
+
     public LocalDate getCreatedDate() {
         return createdDate;
     }
-    
+
     // Setters
     public void setPolicyNumber(String policyNumber) {
         this.policyNumber = policyNumber;
     }
-    
+
     public void setPatientId(String patientId) {
         this.patientId = patientId;
     }
-    
+
     public void setPolicyType(PolicyType policyType) {
         this.policyType = policyType;
     }
-    
+
     public void setPolicyStatus(PolicyStatus policyStatus) {
         this.policyStatus = policyStatus;
     }
-    
+
     public void setCoverageAmount(double coverageAmount) {
         this.coverageAmount = coverageAmount;
     }
-    
+
     public void setDeductible(double deductible) {
         this.deductible = deductible;
     }
-    
+
     public void setCopayment(double copayment) {
         this.copayment = copayment;
     }
-    
+
     public void setMonthlyPremium(double monthlyPremium) {
         this.monthlyPremium = monthlyPremium;
     }
-    
+
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
-    
+
     public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
-    
+
     public void setInsuranceProviderId(String insuranceProviderId) {
         this.insuranceProviderId = insuranceProviderId;
     }
-    
+
     public void setCreatedDate(LocalDate createdDate) {
         this.createdDate = createdDate;
     }
-    
+
     /**
      * Add beneficiary
      */
@@ -265,14 +265,14 @@ public class Policy implements Serializable {
             beneficiaries.add(beneficiaryName);
         }
     }
-    
+
     /**
      * Remove beneficiary
      */
     public void removeBeneficiary(String beneficiaryName) {
         beneficiaries.remove(beneficiaryName);
     }
-    
+
     /**
      * Add claim to policy
      */
@@ -281,7 +281,7 @@ public class Policy implements Serializable {
             claimIds.add(claimId);
         }
     }
-    
+
     /**
      * Get beneficiaries as formatted string
      */
@@ -291,47 +291,73 @@ public class Policy implements Serializable {
         }
         return String.join(", ", beneficiaries);
     }
-    
+
     /**
      * Check if policy is currently active
      */
     public boolean isCurrentlyActive() {
         LocalDate today = LocalDate.now();
-        return policyStatus == PolicyStatus.ACTIVE && 
-               !today.isBefore(startDate) && 
-               !today.isAfter(expiryDate);
+        return policyStatus == PolicyStatus.ACTIVE &&
+                !today.isBefore(startDate) &&
+                !today.isAfter(expiryDate);
     }
-    
+
     /**
      * Check if policy is expired
      */
     public boolean isExpired() {
         return LocalDate.now().isAfter(expiryDate) || policyStatus == PolicyStatus.EXPIRED;
     }
-    
+
     /**
-     * Renew policy
+     * Renew policy with standard 7% premium increase
      */
     public void renewPolicy(int years) {
+        renewPolicyWithPremiumIncrease(years, 7.0);
+    }
+
+    /**
+     * Renew policy with custom premium increase
+     * 
+     * @param years           Number of years to renew for
+     * @param increasePercent Percentage to increase premium (e.g., 7.0 for 7%)
+     */
+    public void renewPolicyWithPremiumIncrease(int years, double increasePercent) {
+        // Calculate new premium with increase
+        this.monthlyPremium = this.monthlyPremium * (1 + increasePercent / 100.0);
+
+        // Update dates
         this.startDate = this.expiryDate.plusDays(1);
         this.expiryDate = this.startDate.plusYears(years);
+
+        // Set status to active
         this.policyStatus = PolicyStatus.ACTIVE;
     }
-    
+
+    /**
+     * Check if policy can be renewed
+     * Policies can be renewed if they are ACTIVE or EXPIRED (not CANCELLED or
+     * SUSPENDED)
+     */
+    public boolean canBeRenewed() {
+        return this.policyStatus == PolicyStatus.ACTIVE ||
+                this.policyStatus == PolicyStatus.EXPIRED;
+    }
+
     /**
      * Cancel policy
      */
     public void cancelPolicy() {
         this.policyStatus = PolicyStatus.CANCELLED;
     }
-    
+
     /**
      * Suspend policy
      */
     public void suspendPolicy() {
         this.policyStatus = PolicyStatus.SUSPENDED;
     }
-    
+
     /**
      * Activate policy
      */
@@ -341,35 +367,35 @@ public class Policy implements Serializable {
         }
         this.policyStatus = PolicyStatus.ACTIVE;
     }
-    
+
     /**
      * Get formatted coverage amount
      */
     public String getFormattedCoverageAmount() {
         return String.format("$%,.2f", coverageAmount);
     }
-    
+
     /**
      * Get formatted deductible
      */
     public String getFormattedDeductible() {
         return String.format("$%,.2f", deductible);
     }
-    
+
     /**
      * Get formatted copayment
      */
     public String getFormattedCopayment() {
         return String.format("$%.2f", copayment);
     }
-    
+
     /**
      * Get formatted monthly premium
      */
     public String getFormattedMonthlyPremium() {
         return String.format("$%.2f/month", monthlyPremium);
     }
-    
+
     /**
      * Get formatted start date
      */
@@ -377,7 +403,7 @@ public class Policy implements Serializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return startDate.format(formatter);
     }
-    
+
     /**
      * Get formatted expiry date
      */
@@ -385,56 +411,58 @@ public class Policy implements Serializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return expiryDate.format(formatter);
     }
-    
+
     /**
      * Get number of claims filed
      */
     public int getClaimCount() {
         return claimIds.size();
     }
-    
+
     /**
      * Calculate annual premium
      */
     public double getAnnualPremium() {
         return monthlyPremium * 12;
     }
-    
+
     /**
      * Get formatted annual premium
      */
     public String getFormattedAnnualPremium() {
         return String.format("$%,.2f/year", getAnnualPremium());
     }
-    
+
     /**
      * Validate policy data
      */
     public boolean isValid() {
-        return !policyNumber.isEmpty() && 
-               !patientId.isEmpty() && 
-               policyType != null && 
-               coverageAmount > 0 && 
-               deductible >= 0 && 
-               copayment >= 0 && 
-               startDate != null && 
-               expiryDate != null &&
-               expiryDate.isAfter(startDate);
+        return !policyNumber.isEmpty() &&
+                !patientId.isEmpty() &&
+                policyType != null &&
+                coverageAmount > 0 &&
+                deductible >= 0 &&
+                copayment >= 0 &&
+                startDate != null &&
+                expiryDate != null &&
+                expiryDate.isAfter(startDate);
     }
-    
+
     @Override
     public String toString() {
         return policyNumber + " - " + policyType.getDisplayName() + " (" + policyStatus.getDisplayName() + ")";
     }
-    
+
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
         Policy policy = (Policy) obj;
         return policyNumber.equals(policy.policyNumber);
     }
-    
+
     @Override
     public int hashCode() {
         return policyNumber.hashCode();

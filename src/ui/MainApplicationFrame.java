@@ -16,15 +16,15 @@ public class MainApplicationFrame extends javax.swing.JFrame {
     public MainApplicationFrame() {
         initComponents();
         setLocationRelativeTo(null);
-        
+
         // Try to load saved data
         loadSavedData();
-        
+
         // Add LoginPanel
         LoginPanel loginPanel = new LoginPanel();
         mainContainerPanel.add(loginPanel, "loginPanel");
         showPanel("loginPanel");
-        
+
         // Add window closing listener to save data
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -33,72 +33,72 @@ public class MainApplicationFrame extends javax.swing.JFrame {
             }
         });
     }
-    
+
     /**
      * Load saved data on startup
      */
     private void loadSavedData() {
         if (business.SystemData.hasSavedData()) {
             int response = javax.swing.JOptionPane.showConfirmDialog(this,
-                "Found saved data from previous session.\n\n" +
-                "Do you want to load it?\n\n" +
-                "Click 'No' to start with fresh sample data.",
-                "Load Saved Data?",
-                javax.swing.JOptionPane.YES_NO_OPTION,
-                javax.swing.JOptionPane.QUESTION_MESSAGE);
-            
+                    "Found saved data from previous session.\n\n" +
+                            "Do you want to load it?\n\n" +
+                            "Click 'No' to start with fresh sample data.",
+                    "Load Saved Data?",
+                    javax.swing.JOptionPane.YES_NO_OPTION,
+                    javax.swing.JOptionPane.QUESTION_MESSAGE);
+
             if (response == javax.swing.JOptionPane.YES_OPTION) {
                 business.SystemData loadedData = business.SystemData.loadFromFile();
                 if (loadedData != null) {
                     javax.swing.JOptionPane.showMessageDialog(this,
-                        "Data loaded successfully!\n\n" +
-                        "File size: " + utils.FileHandler.getFormattedFileSize(),
-                        "Data Loaded",
-                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                            "Data loaded successfully!\n\n" +
+                                    "File size: " + utils.FileHandler.getFormattedFileSize(),
+                            "Data Loaded",
+                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     javax.swing.JOptionPane.showMessageDialog(this,
-                        "Failed to load saved data.\n\nStarting with fresh data.",
-                        "Load Failed",
-                        javax.swing.JOptionPane.WARNING_MESSAGE);
+                            "Failed to load saved data.\n\nStarting with fresh data.",
+                            "Load Failed",
+                            javax.swing.JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
     }
-    
+
     /**
      * Save data on application exit
      */
     private void saveDataOnExit() {
         business.SystemData systemData = business.SystemData.getInstance();
-        
+
         int response = javax.swing.JOptionPane.showConfirmDialog(this,
-            "Do you want to save all data before exiting?",
-            "Save Data?",
-            javax.swing.JOptionPane.YES_NO_CANCEL_OPTION,
-            javax.swing.JOptionPane.QUESTION_MESSAGE);
-        
+                "Do you want to save all data before exiting?",
+                "Save Data?",
+                javax.swing.JOptionPane.YES_NO_CANCEL_OPTION,
+                javax.swing.JOptionPane.QUESTION_MESSAGE);
+
         if (response == javax.swing.JOptionPane.CANCEL_OPTION) {
             // Cancel exit
             return;
         }
-        
+
         if (response == javax.swing.JOptionPane.YES_OPTION) {
             boolean saved = systemData.saveToFile();
             if (saved) {
                 javax.swing.JOptionPane.showMessageDialog(this,
-                    "Data saved successfully!\n\n" +
-                    "File: healthguard360_data.dat\n" +
-                    "Size: " + utils.FileHandler.getFormattedFileSize(),
-                    "Data Saved",
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                        "Data saved successfully!\n\n" +
+                                "File: healthguard360_data.dat\n" +
+                                "Size: " + utils.FileHandler.getFormattedFileSize(),
+                        "Data Saved",
+                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
             } else {
                 javax.swing.JOptionPane.showMessageDialog(this,
-                    "Failed to save data!",
-                    "Save Failed",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+                        "Failed to save data!",
+                        "Save Failed",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
             }
         }
-        
+
         // Exit application
         System.exit(0);
     }
@@ -109,7 +109,8 @@ public class MainApplicationFrame extends javax.swing.JFrame {
      * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -123,29 +124,17 @@ public class MainApplicationFrame extends javax.swing.JFrame {
 
         mainContainerPanel.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(mainContainerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(638, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addGap(81, 81, 81)
-                .addComponent(mainContainerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(487, Short.MAX_VALUE))
-        );
+        // Use BorderLayout instead of GroupLayout to prevent layout shifting
+        getContentPane().setLayout(new java.awt.BorderLayout());
+
+        // Create a header panel for the title
+        javax.swing.JPanel headerPanel = new javax.swing.JPanel();
+        headerPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        headerPanel.add(jLabel1);
+
+        // Add components to content pane
+        getContentPane().add(headerPanel, java.awt.BorderLayout.NORTH);
+        getContentPane().add(mainContainerPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,9 +144,13 @@ public class MainApplicationFrame extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -167,16 +160,20 @@ public class MainApplicationFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainApplicationFrame.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         }
-        //</editor-fold>
-        
+        // </editor-fold>
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -184,19 +181,21 @@ public class MainApplicationFrame extends javax.swing.JFrame {
             }
         });
     }
-    
+
     /**
      * Method to switch between different panels/screens
+     * 
      * @param panelName The name of the panel to display
      */
     public void showPanel(String panelName) {
         java.awt.CardLayout layout = (java.awt.CardLayout) mainContainerPanel.getLayout();
         layout.show(mainContainerPanel, panelName);
     }
-    
+
     /**
      * Method to add a new panel to the container
-     * @param panel The panel to add
+     * 
+     * @param panel     The panel to add
      * @param panelName The unique name identifier for this panel
      */
     public void addPanel(javax.swing.JPanel panel, String panelName) {

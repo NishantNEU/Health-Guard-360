@@ -39,6 +39,7 @@
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="myProfileButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="buyPolicyButton" min="-2" max="-2" attributes="0"/>
                           <Component id="findPharmacyButton" min="-2" max="-2" attributes="0"/>
                           <Component id="myPrescriptionsButton" min="-2" max="-2" attributes="0"/>
                           <Component id="myClaimsButton" min="-2" max="-2" attributes="0"/>
@@ -71,8 +72,10 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="findPharmacyButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="buyPolicyButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="myProfileButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="157" max="32767" attributes="0"/>
+                      <EmptySpace pref="116" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -140,6 +143,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myProfileButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="buyPolicyButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buy Policy"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buyPolicyButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
